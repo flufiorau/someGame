@@ -1,0 +1,29 @@
+<div class="the-game">
+  <h1>{{title}}</h1>
+  <div *ngIf="allFields" class="game-field">
+    <button (click)="setChecked(square)" *ngFor="let square of allFields" [ngClass]="square.class">
+    </button>
+  </div>
+  <div class="game-actions">
+    <label>Время в миллисекундах
+      <input [(ngModel)]="interval" type="number">
+    </label>
+    <button (click)="startNewGame()" [disabled]="!interval || !gameOver.value || (interval < 1)">Начать</button>
+  </div>
+</div>
+<div class="modal" *ngIf="modalShow">
+  <div class="game-result">
+    <span>Игра окончена</span>
+    <table>
+      <tr>
+        <th>Компьютер</th>
+        <th>Игрок</th>
+      </tr>
+      <tr>
+        <td>{{counterForPC.value}}</td>
+        <td>{{counterForUser.value}}</td>
+      </tr>
+    </table>
+    <button (click)="modalShow = false">Закрыть</button>
+  </div>
+</div>

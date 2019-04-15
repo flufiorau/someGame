@@ -1,0 +1,62 @@
+.the-game {
+  text-align: center;
+  margin: auto;
+  width: 300px;
+}
+
+.game-field {
+  display: flex;
+  flex-wrap: wrap;
+  background: #373cff;
+}
+
+.game-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.game-actions > button {
+  width: 100%;
+}
+
+.game-field__square {
+  height: 30px;
+  width: 30px;
+  border: 1px solid gray;
+  background: transparent;
+}
+
+.game-field__square.active {
+  cursor: pointer;
+  background: yellow;
+}
+
+.game-field__square.checked {
+  background: green;
+}
+
+.game-field__square.unchecked {
+  background: red;
+}
+
+.game-result {
+  background-color: white;
+  margin: auto;
+  text-align: center;
+  width: 300px;
+}
+
+.game-result > table {
+  width: 100%;
+}
+
+.modal {
+  background-color: rgba(255, 255, 255, .8);
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
